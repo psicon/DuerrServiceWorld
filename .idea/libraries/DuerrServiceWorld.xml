@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="DuerrServiceWorld">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/platforms/android/CordovaLib/ant-gen" />
+      <root url="file://$PROJECT_DIR$/platforms/android/CordovaLib/src" />
+      <root url="file://$PROJECT_DIR$/platforms/android/ant-gen" />
+      <root url="file://$PROJECT_DIR$/platforms/android/src" />
+      <root url="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.barcodescanner/src/android" />
+      <root url="file://$PROJECT_DIR$/plugins/plugin.http.request/src/android" />
+    </SOURCES>
+  </library>
+</component>

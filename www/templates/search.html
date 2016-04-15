@@ -1,0 +1,40 @@
+<ion-view title="{{articlecount}} {{ 'RESULTS' | translate }}" class="home">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    <button ng-click="openfilter()" class="button button-icon icon ion-funnel"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+  
+    <img src="./img/logo.png"  class="headerimg">
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+     <ion-refresher on-refresh="doRefresh()" pulling-text="{{ 'PULLTOREFRESH' | translate }}">
+
+     </ion-refresher>
+
+<h1 ng-show="articlecount == 0" style="margin-top: 50pt; text-align: center;">- {{ 'NOTHINGFOUND' | translate }} -</h1>
+
+     <ion-list ng-if="!isoffline" class="list" ng-repeat="article in articles.data " >
+        <a class="item item-avatar item-icon-right"  ng-click="opendetails('{{article.article_nr}}', '{{article.sales_group}}')">
+           <img ng-if="article.product_image!=''" src="{{article.product_image}}" class="">
+           <img ng-if="article.product_image==''" src="./img/dummybild.png" class="">
+           <i class="icon ion-ios7-arrow-right"></i>
+           <h2 style="white-space:pre;" ng-show="applanguage=='de'">{{article.article_name_de}}</h2>
+           <h2 style="white-space:pre;" ng-show="applanguage!='de'">{{article.article_name_en}}</h2>
+           <p ng-show="article.registered" style="color: #00bbef; font-weight: bold;">{{ 'SURGERY' | translate }}: {{article.praxis}}</p>
+        </a>
+     </ion-list>
+
+
+     <ion-list ng-if="isoffline" class="list" ng-repeat="article in articles.Table.Row | filter:filterOfflineSearch" >
+        <a class="item item-avatar item-icon-right"  ng-click="opendetails('{{article.ArtNr}}', '{{article.SalesGroup}}')">
+            <img  src="./img/dummybild.png" class="">
+           <i class="icon ion-ios7-arrow-right"></i>
+           <h2 style="white-space:pre;" ng-show="applanguage=='de'">{{article.ArtBezDe}}</h2>
+           <h2 style="white-space:pre;" ng-show="applanguage!='de'">{{article.ArtBezEn}}</h2>
+           <p ng-show="article.registered" style="color: #00bbef; font-weight: bold;">{{ 'SURGERY' | translate }}: {{article.praxis}}</p>
+        </a>
+     </ion-list>
+
+  </ion-content>
+</ion-view>

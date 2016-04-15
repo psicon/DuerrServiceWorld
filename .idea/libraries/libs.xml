@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/platforms/android/libs/google-volley.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/libs/com.google.zxing.client.android.captureactivity.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

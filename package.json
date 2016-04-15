@@ -1,0 +1,41 @@
+{
+  "name": "exampleproject",
+  "version": "1.0.0",
+  "description": "ExampleProject: An Ionic project",
+  "dependencies": {
+    "gulp": "^3.5.6",
+    "gulp-sass": "^0.7.1",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "gulp-util": "^2.2.14",
+    "shelljs": "^0.3.0"
+  },
+  "cordovaPlugins": [
+    "https://github.com/katzer/cordova-plugin-email-composer.git",
+    "https://github.com/phonegap-build/BarcodeScanner.git",
+    "https://github.com/EddyVerbruggen/Flashlight-PhoneGap-Plugin",
+    "plugin.http.request",
+    "com.ionic.keyboard",
+    "cordova-plugin-network-information",
+    "nl.x-services.plugins.flashlight",
+    "org.apache.cordova.camera",
+    "org.apache.cordova.console",
+    "org.apache.cordova.device",
+    "org.apache.cordova.file",
+    "org.apache.cordova.file-transfer",
+    "org.apache.cordova.globalization",
+    "org.apache.cordova.inappbrowser",
+    "org.cloudsky.cordovaplugins.zbar",
+    "https://git-wip-us.apache.org/repos/asf/cordova-plugin-file-transfer.git",
+    "https://git-wip-us.apache.org/repos/asf/cordova-plugin-file.git",
+    "cordova-plugin-whitelist",
+    "https://github.com/deefactorial/Cordova-open-native-settings.git"
+  ],
+  "cordovaPlatforms": [
+    "ios"
+  ]
+}

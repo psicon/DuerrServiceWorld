@@ -1,0 +1,82 @@
+<ion-view title='Dürr Service' class="start">
+
+    <ion-nav-buttons side="right">
+
+        <img src="./img/logo.png" class="headerimg">
+    </ion-nav-buttons>
+    <ion-content>
+
+        <div id="login" style="margin-left:-7pt;">
+
+            <div class="loginheader2">
+                <h2><i class="icon ion-ios7-locked"></i>
+                Login</h2>
+            </div>
+        </div>
+        <form name="loginform" nav-clear ng-submit="doLogin()">
+            <fieldset>
+                <p> {{ 'ENTERLOGINDATA' | translate }}</p>
+
+                <!--ng-class="{ 'has-error' : loginform.username.$invalid}" -->
+                <p>
+                    <input style="padding-left: 5pt;" name="username" type="email" placeholder="{{ 'MAILAD' | translate }}" ng-model="loginData.username" required ng-minlength=1 ng-maxlength=50>
+                </p>
+                <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+
+
+                <p>
+                    <input style="padding-left: 5pt;" name="password" type="password" placeholder="{{ 'PASSWORD' | translate }}" value="{{password}}" ng-model="loginData.password" required ng-minlength=1 ng-maxlength=50>
+
+                </p>
+
+                <div style="white-space: nowrap;text-overflow: clip;">
+                    <ion-checkbox required style="margin-left:-9pt; margin-bottom:-6pt; border: none; background: #ebebeb; display: inline-block;" ng-model="loginData.agb">{{ 'AGB' | translate }}</ion-checkbox>
+                    
+                    <a ng-hide='isLongLang' style="display: inline-block; margin-left:5pt;margin-right: 5pt; position: absolute; margin-top:16pt;" ng-click="modal.show()" target="_blank">- {{ 'READ' | translate }} -</a>
+                    
+                    <div ng-show='isLongLang'>
+                        <a style="display: inline-block; margin-left:30pt;" ng-click="modal.show()" target="_blank">- {{ 'READ' | translate }} -</a>
+                    </div>
+                    
+                </div>
+                <ion-checkbox style="margin-left:-9pt;border:none;margin-bottom:-6pt; background: #ebebeb;" ng-model="loginData.remember">{{ 'REMEMBERLOGINDATABUTTON' | translate }}</ion-checkbox>
+
+
+                <!-- JS because of IE support; better: placeholder="password" -->
+                <div class="button-bar">
+
+                    <button ng-disabled="loginform.$invalid" ng-submit="doLogin()" type="submit" class="button button-block normalbutton bluelight" style="margin-right: 10px; border-radius: 9px; " value="{{ 'LOGINBUTTON' | translate }}"><img align="left" src="./img/ico/IconLock.png" width="20" style="margin-top:9pt;" /> {{ 'LOGINBUTTON' | translate }}</button>
+        </form>
+        <button ng-disabled="!loginData.agb" ng-click="demomode()" nav-clear class="button button-block  normalbutton" style="border-radius: 9px;margin-left: 10px" value="{{ 'DEMOBUTTON' | translate }}"><img align="left" src="./img/ico/IconInformation.png" width="20" style="margin-top:9pt;" /> {{ 'DEMOBUTTON' | translate }}</button>
+
+
+        </div>
+
+        <hr style="border:solid #555555 1px;">
+        <div id="login" style="margin-left:-7pt; margin-bottom:-22pt;">
+
+            <div class="loginheader2">
+                <h2><i class="icon ion-ios7-locked"></i>
+                            {{ 'FORGOT' | translate }}</h2>
+            </div>
+        </div>
+
+        </fieldset>
+
+
+        <div style="margin:12pt;">
+            <div class="button-bar">
+                <button style="margin-right: 5pt; border-radius: 9px; border-right:solid 1px;" class="button button-block  " value="Registrieren" ng-click="registeruser()">
+                    <img align="left" src="./img/ico/registrieren.png" width="20" style="margin-top:9pt;" /> {{ 'REGISTERBUTTON' | translate }}</button>
+                <button style="margin-left: 5pt; border-radius: 9px;" class="button button-block  " value="Daten vergessen" ng-click="forgotdata()">
+                    <img align="left" src="./img/ico/IconHelp.png" width="20" style="margin-top:9pt;" /> {{ 'FORGOTDATABUTTON' | translate }}</button>
+
+            </div>
+        </div>
+
+
+        </div>
+        <!-- end login -->
+
+    </ion-content>
+</ion-view>

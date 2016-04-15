@@ -1,0 +1,45 @@
+<ion-view title='Dürr Service' class="home">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <img src="./img/logo.png"  class="headerimg ">
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+
+    <div >
+
+      <div class="item item-thumbnail-left">
+        <img src="{{articles.data[0].product_image}}" class="animated fadeIn">
+
+
+        <h2 style="white-space:pre; ">{{articles.data[0].article_name_de}}</h2>
+         <h2 style="white-space:pre; ">{{articles.data[0].article_nr}}</h2>
+
+         <p style="white-space:pre; ">{{surgery}}</p>
+
+       </div>
+       <div class="button-bar">
+          <a class="button glow" style="text-align:left;border-radius: 7px;" ng-click="registerdevice()" ng-disabled="true">
+             <img src="./img/ico/registrieren.png" width="20" style="margin-left:10px; margin-top:9pt; "/>
+             {{ 'REGISTERBUTTON' | translate }}
+          </a>
+          <a class=" button  glow" style="text-align:left;border-radius: 7px;" ng-hide="loggedinuser=='guest'"  ng-click="service()"  >
+             <img src="./img/ico/service-anfragen.png" width="20" style="margin-left:10px; margin-top:9pt; "/>
+             {{ 'SERVICEBUTTON' | translate }}
+          </a>
+
+       </div>
+           <div ng-repeat="articledoc in articles.data[0].documents  | filter:doctypesfilter">
+             <a class="item item-icon " ng-click="getdocuments('{{articledoc.document_type}}')">
+                <img src="./img/ico/Doku_{{articledoc.document_type}}.png" width="20" style="margin-left:10px; margin-top:9pt; "/>
+                {{articledoc.document_type}} ({{articledoc.document_count}})
+             </a>
+          </div>
+
+    </div>
+
+
+  </ion-content>
+</ion-view>

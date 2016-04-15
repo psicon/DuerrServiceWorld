@@ -1,0 +1,15 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-stable">
+    <h1 class="title"></h1>
+    <button class="button button-clear button-primary icon ion-close-circled" ng-click="modal3.hide()"> </button>
+  </ion-header-bar>
+  <ion-content class="padding">
+
+      <ul class="item  item-icon-right" ng-click="validatesingle(name.id)" ng-repeat="name in options" ng-class="{true:'selected'}[name.id == applanguage]">
+        <img src="./img/ico/service-anfragen2.png" width="15" style="margin-right:13pt;" ></img>
+        {{name.name}}
+        <i class="icon ion-ios7-arrow-right"></i>
+
+      </ul>
+   </ion-content>
+</ion-modal-view>

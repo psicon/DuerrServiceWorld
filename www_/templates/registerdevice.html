@@ -1,0 +1,151 @@
+1<ion-view title='Dürr Service' class="home">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <img src="./img/logo.png" class="headerimg">
+  </ion-nav-buttons>
+  <ion-content padding="false" scroll="true" class="has-header">
+
+    <form class="registerform" name="registerform" style="width:100%; border:none;" novalidate ng-submit="registerformsubmit()" ng-controller="registerDeviceCtrl">
+        <ion-list>
+
+          <ion-item class="serviceheader">
+            {{ 'SURGERYDATA' | translate }}
+          </ion-item>
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.surgery.$invalid}">
+            <span class="input-label">{{ 'SURGERY' | translate }}:</span>
+            <input  name="surgery" type="text" ng-minlength="3" placeholder="" ng-maxlength="70" required ng-model="surgery">
+            <i class="icon ion-alert iconerror" style="" ng-show="registerform.surgery.$invalid"></i><br>
+
+          </label>
+
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.contactperson.$invalid}">
+            <span class="input-label">{{ 'CONTACTPERSON' | translate }}:</span>
+            <input  name="contactperson" type="text" ng-minlength="3" placeholder="" ng-maxlength="70"  ng-model="contactperson">
+            <i class="icon ion-alert iconerror" ng-show="registerform.contactperson.$invalid"></i><br>
+          </label>
+
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.streetno.$invalid}">
+            <span class="input-label">{{ 'STREETNO' | translate }}:</span>
+            <input  name="streetno" type="text" ng-minlength="3" placeholder="" ng-maxlength="70" required ng-model="streetno">
+            <i class="icon ion-alert iconerror" ng-show="registerform.streetno.$invalid"></i><br>
+          </label>
+
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.zipcity.$invalid}">
+            <span class="input-label">{{ 'ZIPCITY' | translate }}:</span>
+            <input  name="zipcity" type="text" ng-minlength="3" placeholder="" ng-maxlength="70" required ng-model="zipcity">
+            <i class="icon ion-alert iconerror" ng-show="registerform.zipcity.$invalid"></i><br>
+          </label>
+
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.country.$invalid}">
+            <span class="input-label">{{ 'COUNTRY' | translate }}:</span>
+            <input  name="country" type="text" ng-minlength="3" placeholder="" ng-maxlength="70" required ng-model="country">
+            <i class="icon ion-alert iconerror" ng-show="registerform.country.$invalid"></i><br>
+          </label>
+
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.phone.$invalid}">
+            <span class="input-label">{{ 'PHONE' | translate }}:</span>
+            <input  name="phone" type="tel" ng-minlength="3" placeholder="" ng-maxlength="70"  ng-model="phone">
+            <i class="icon ion-alert iconerror" ng-show="registerform.phone.$invalid"></i><br>
+          </label>
+
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.mail.$invalid}">
+            <span class="input-label">{{ 'MAIL' | translate }}:</span>
+            <input  name="mail" type="email" ng-minlength="3" placeholder="" ng-maxlength="70" required ng-model="mail">
+            <i class="icon ion-alert iconerror" ng-show="registerform.mail.$invalid"></i><br>
+          </label>
+
+          <ion-item class="serviceheader">
+            {{ 'DENTALDEPOT' | translate }}
+          </ion-item>
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.dentaldepot.$invalid}">
+            <span class="input-label">{{ 'DENTALDEPOT' | translate }}:</span>
+            <input  name="dentaldepot" type="text" ng-minlength="3" placeholder="" ng-maxlength="70" required ng-model="dentaldepot">
+            <i class="icon ion-alert error iconerror" ng-show="registerform.dentaldepot.$invalid"></i><br>
+          </label>
+
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.location.$invalid}">
+            <span class="input-label">{{ 'LOCATION' | translate }}:</span>
+            <input  name="location" type="text" ng-minlength="3" placeholder="" ng-maxlength="40" required ng-model="location">
+            <i class="icon ion-alert iconerror" ng-show="registerform.location.$invalid"></i><br>
+          </label>
+
+
+          <ion-item class="serviceheader">
+            {{ 'DEVICEDATA' | translate }}
+          </ion-item>
+<div>
+          <label class="item item-input" style="display: inline-block; width:80%;" ng-class="{ 'has-error' : registerform.modelno.$invalid}">
+            <span class="input-label">{{ 'MODELNO' | translate }}:</span>
+            <input    name="modelno" type="text" ng-minlength="3" placeholder="" ng-maxlength="70" required ng-model="modelno">
+
+
+
+          </label>
+           <a   ng-click="scanartno()"   class="button button-block icon animated zoomIn" style="display: inline-block; width:auto;border-radius: 5px;   border: none; height: 55pt; box-shadow: 0 0 10px #00bbef;" >
+              <img align="left" class="" src="./img/ico/code-scannen.png" width="25" style="padding-top:18pt;"/></a>
+</div>
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.model.$invalid}">
+            <span class="input-label">{{ 'MODEL' | translate }}:</span>
+            <input  name="model" type="text" ng-minlength="3" placeholder="" ng-maxlength="70"  ng-model="model">
+            <i class="icon ion-alert iconerror" ng-show="registerform.model.$invalid"></i><br>
+          </label>
+<div>
+          <label class="item item-input" style="display: inline-block; width:80%; height:61pt;" ng-class="{ 'has-error' : registerform.serialno.$invalid}">
+            <span class="input-label">{{ 'SERIALNO' | translate }}:</span>
+            <input  name="serialno" type="text" ng-minlength="3" placeholder="" ng-maxlength="70" required ng-model="serialno">
+            <i class="icon ion-alert iconerror" ng-show="registerform.serialno.$invalid"></i><br>
+            <!--
+-->
+          </label>
+   <a   ng-click="scanserial()"   class="button button-block icon animated zoomIn" style="display: inline-block; width:auto;border-radius: 5px;   border: none; height: 55pt; box-shadow: 0 0 10px #00bbef;">
+      <img align="left" class="" src="./img/ico/code-scannen.png" width="25" style="padding-top:18pt;"/></a>
+</div>
+
+          <ion-item class="serviceheader">
+            {{ 'INSTALLDATA' | translate }}
+          </ion-item>
+
+          <ion-checkbox  style="margin-left:0pt; margin-bottom:-6pt; border: none; background: #ebebeb;" ng-model="newinstall">{{ 'NEWINSTALL' | translate }}</ion-checkbox>
+
+          <label ng-if="newinstall" class="item item-input" ng-class="{ 'has-error' : registerform.installdate.$invalid}">
+            <span class="input-label">{{ 'INSTALLDATE' | translate }}:</span>
+            <input  name="installdate" type="date" ng-minlength="3" placeholder="" required ng-maxlength="70"  ng-model="$parent.installdate">
+            <i class="icon ion-alert iconerror" ng-show="registerform.installdate.$invalid"></i><br>
+          </label>
+
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.nameofemployee.$invalid}">
+            <span class="input-label">{{ 'NAMEOFEMPLOYEE' | translate }}:</span>
+            <input  name="nameofemployee" type="text" ng-minlength="3" placeholder="" ng-maxlength="70" required ng-model="nameofemployee">
+            <i class="icon ion-alert iconerror" ng-show="registerform.nameofemployee.$invalid"></i><br>
+          </label>
+
+          <label class="item item-input" ng-class="{ 'has-error' : registerform.dateofproducttraining.$invalid}">
+            <span class="input-label">{{ 'DATEOFPRODUCTTRAINING' | translate }}:</span>
+            <input  name="dateofproducttraining" type="date" ng-minlength="3" placeholder="" ng-maxlength="70"   ng-model="dateofproducttraining">
+            <i class="icon ion-alert iconerror" ng-show="registerform.dateofproducttraining.$invalid"></i><br>
+          </label>
+
+
+          <ion-item class="serviceheader">
+            {{ 'VALIDATION' | translate }}
+          </ion-item>
+               <label class="checkbox" style="display: inline-block;white-space: pre-line; margin-top:-10pt; margin-left: 21pt; margin-right:10pt;" >
+                 <input type="checkbox"  required  style="   margin-right:13pt;border: none" ng-model="registerform.validate">{{ 'IAGREE' | translate }}</input>
+
+              </label>
+
+
+        </ion-list><!--d
+      <button    class="button button-stable button-block"  type="submit">{{ 'REGISTERBUTTON' | translate }}</button>
+-->
+       <button class="button glow" style="margin:5pt;  width:96%;text-align:center; border-radius: 7px;" ng-disabled="registerform.$invalid"  type="submit">
+          <img align="left" src="./img/ico/registrieren.png" width="20" style=" margin-top:9pt; "/>
+          {{ 'REGISTERLONG' | translate }}
+       </button>
+        <br>
+    </form>
+  </ion-content>
+</ion-view>

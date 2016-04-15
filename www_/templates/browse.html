@@ -1,0 +1,66 @@
+<ion-view title='Dürr Service' class="home">
+  <ion-nav-buttons side="left" hide-back-button="true">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+
+  </ion-nav-buttons>
+   <ion-nav-buttons side="right">
+      <img
+              src="./img/logo.png"  class="headerimg">
+   </ion-nav-buttons>
+  <ion-content class="has-header">
+  <div class="">
+
+     <ion-list>
+             <form name="formean"  ng-submit="searchprodukte(suche)" novalidate  class="searchform">
+               <div id="login" style="margin-top:-2pt;">
+                  <div class="loginheader2" style="padding-left:20pt;width:150%"><img src="./img/ico/IconFind.png" width="35" class="startheaderimg"/>
+                     {{ 'SEARCHBUTTONMENU' | translate }}</div>
+               </div>
+
+                <div class="button-bar" style="padding:5pt; padding-right:13pt;">
+
+                   <a   ng-click="scanBarcode()" nav-clear  class="button button-block icon animated zoomIn" style="width:180pt; border-radius: 9px;padding-right: 5px; margin-right:14pt; margin-left: 10pt; border: none; height: auto; box-shadow: 0 0 10px #00bbef;" >
+                      <img align="left" class="" src="./img/ico/code-scannen.png" width="25" style="padding-top:9pt;"/> {{ 'SCANBUTTONSTART' | translate }}</a>
+
+
+
+
+                    <label class="item-input-wrapper " style="background:white;margin-top:7pt; height:37pt; border-color: #00bbef; border-radius: 6px; border: solid;	border-width: 1px; border-height:-10px;"style="border-color: #00bbef; border-radius: 6px; border: solid;	border-width: 1px; border-height:-10px;" >
+
+                      <input  class="input2" style="width: 80%; height:40px; font-size: 14px; padding-left:2pt; " ng-submit="searchprodukte(suche)" data-ng-model="suche.nach" name="eanEAN" type="search" autocomplete  placeholder=" &nbsp;&nbsp; {{ 'SEARCHBUTTONMENU' | translate }}"  required ng-minlength=3 ></input>
+                          <img ng-click="searchprodukte(suche)" type="submit" src="./img/ico/IconFind.png" width="22" style="padding-right:2pt;margin-top:1pt;"/>
+
+                   </label>
+                </div>
+
+
+
+</form>
+                          </ion-list>
+
+     <hr style="border:solid #555555 1pt; margin-top:-1pt;">
+
+<div ng-controller="getLastsearchCtrl">
+     <div id="login">
+        <div id="login" style="margin-top:-13pt;">
+           <div class="loginheader2" style="padding-left:20pt; width:150%"><img src="./img/ico/letzte-suchen.png" width="35" class="startheaderimg"></img>
+              {{ 'LASTSEARCHESHEADER' | translate }} </div>
+        </div>
+        </div>
+
+
+ 					<ion-list class="list" ng-repeat="search in searches |   filter:suche.nach | limitTo:5">
+
+                       <a class="item item-avatar item-icon-right animated fadeInLeft" ng-click="searchprodukteclick('{{search[0].Bezeichnung}}')">
+                           <i class="icon ion-ios7-arrow-right"></i>
+                          <h2 style="white-space: pre;">{{search[0].Bezeichnung}}</h2>
+                          <p>{{search[0].Datum}}</p>
+                        </a>
+
+
+
+       				</ion-list>
+</div>
+              </div>
+  </ion-content>
+</ion-view>

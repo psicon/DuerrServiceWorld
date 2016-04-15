@@ -1,0 +1,145 @@
+<ion-view view-title="Intro">
+   <ion-nav-buttons side="left">
+      <button class="button button-positive button-clear no-animation"
+              ng-click="startApp()" ng-if="!slideIndex">
+         {{ 'INTROSKIP' | translate }}
+      </button>
+      <button class="button button-positive button-clear no-animation"
+              ng-click="previous()" ng-if="slideIndex > 0">
+         {{ 'INTROBACK' | translate }}
+      </button>
+   </ion-nav-buttons>
+   <ion-nav-buttons side="right">
+      <button class="button button-positive button-clear no-animation"
+              ng-click="next()" ng-if="slideIndex != 3">
+         {{ 'INTRONEXT' | translate }}
+      </button>
+
+
+      <button class="button button-positive button-clear no-animation animated pulse infinite"
+              ng-click="startApp()" ng-if="slideIndex == 3">
+         {{ 'INTROSTART' | translate }}
+      </button>
+
+   </ion-nav-buttons>
+   <ion-slide-box on-slide-changed="slideChanged(index)" >
+
+      <ion-slide class="slide1">
+         <div class="logostart">
+         </div>
+         <h2><b>{{ 'INTROWELCOME' | translate }}</b></h2>
+<hr>
+         <p>
+            {{ 'INTROCONCEPT' | translate }}
+         </p>
+         <p>
+            {{ 'INTROCONCEPT2' | translate }}
+         </p>
+      </ion-slide>
+
+      <ion-slide ng-if="applanguage=='de'" class="slide2" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+      <ion-slide ng-if="applanguage=='en'" class="slide2en" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='ch'" class="slide2ch" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='da'" class="slide2da" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='es'" class="slide2es" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='fr'" class="slide2fr" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='it'" class="slide2it" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='pl'" class="slide2pl" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='pt'" class="slide2pt" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='ru'" class="slide2ru" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+
+      <ion-slide ng-if="applanguage=='de'" class="slide3" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+      <ion-slide ng-if="applanguage=='en'" class="slide3en" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='ch'" class="slide3ch" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='da'" class="slide3da" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='es'" class="slide3es" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='fr'" class="slide3fr" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='it'" class="slide3it" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='pl'" class="slide3pl" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='pt'" class="slide3pt" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+       
+       <ion-slide ng-if="applanguage=='ru'" class="slide3ru" align="center" style="background-color: #ebebeb">
+
+      </ion-slide>
+
+      <ion-slide  style="height:100%;background-color: #ebebeb">
+
+         <div ng-if="applanguage=='de'" class="slide4" align="center" style="height:100%;background-color: #ebebeb"></div>
+         <div ng-if="applanguage=='en'" class="slide4en" align="center" style="height:100%;background-color: #ebebeb"></div>
+          
+          <div ng-if="applanguage=='ch'" class="slide4ch" align="center" style="height:100%;background-color: #ebebeb"></div>
+          
+          <div ng-if="applanguage=='da'" class="slide4da" align="center" style="height:100%;background-color: #ebebeb"></div>
+          
+          <div ng-if="applanguage=='es'" class="slide4es" align="center" style="height:100%;background-color: #ebebeb"></div>
+          
+          <div ng-if="applanguage=='fr'" class="slide4fr" align="center" style="height:100%;background-color: #ebebeb"></div>
+          
+          <div ng-if="applanguage=='it'" class="slide4it" align="center" style="height:100%;background-color: #ebebeb"></div>
+          
+          <div ng-if="applanguage=='pl'" class="slide4pl" align="center" style="height:100%;background-color: #ebebeb"></div>
+          
+          <div ng-if="applanguage=='pt'" class="slide4pt" align="center" style="height:100%;background-color: #ebebeb"></div>
+          
+          <div ng-if="applanguage=='ru'" class="slide4ru" align="center" style="height:100%;background-color: #ebebeb"></div>
+         <ion-checkbox ng-model="dontshowagain" name="dontshowagain" id="dontshowagain" ng-click="showagain(dontshowagain)" style="text-align:left; width:100%;margin-bottom:6pt;border:none;margin-left:7pt; margin-top:-30pt;background: #ebebeb;" class="animated bounce">
+            {{ 'DONTSHOWAGAIN' | translate }}
+         </ion-checkbox>
+
+      </ion-slide>
+
+   </ion-slide-box>
+</ion-view>

@@ -1,0 +1,51 @@
+1
+<ion-view title='Dürr Service' class="home">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <img src="./img/logo.png" class="headerimg">
+    </ion-nav-buttons>
+    <ion-content padding="false" scroll="true" class="has-header">
+
+        <form name="registerform" style="width:99%;" novalidate ng-submit="serviceformsubmit()" ng-controller="ServiceCtrl">
+            <fieldset>
+                <ion-list>
+
+                    <ion-item class="serviceheader">
+                        {{ 'QUESTION' | translate }}:
+                    </ion-item>
+                    <textarea cols="35" rows="6" placeholder="" ng-minlength="3" required ng-model="registerform.question"></textarea>
+
+                    <br>
+
+
+
+
+                    <ion-item class="serviceheader">
+                        {{ 'PICTURES' | translate }}
+                    </ion-item>
+
+                    <img id="img1" ng-show="imgURI !== undefined" ng-click="changePicture(1)" ng-src="{{imgURI}}">
+                    <img ng-show="imgURI === undefined" ng-click="changePicture(1)" src="./img/camera-4-100.gif">
+                    
+                    <img ng-show="imgURI2 !== undefined" ng-click="changePicture(2)" ng-src="{{imgURI2}}">
+                    <img ng-show="imgURI2 === undefined" ng-click="changePicture(2)" src="./img/camera-4-100.gif">
+                    
+                    <img ng-show="imgURI3 !== undefined" ng-click="changePicture(3)" ng-src="{{imgURI3}}">
+                    <img ng-show="imgURI3 === undefined" ng-click="changePicture(3)" src="./img/camera-4-100.gif">
+                    
+                    <img ng-show="imgURI4 !== undefined" ng-click="changePicture(4)" ng-src="{{imgURI4}}">
+                    <img ng-show="imgURI4 === undefined" ng-click="changePicture(4)" src="./img/camera-4-100.gif">
+                    
+                    <img ng-show="imgURI5 !== undefined" ng-click="changePicture(5)" ng-src="{{imgURI5}}">
+                    <img ng-show="imgURI5 === undefined" ng-click="changePicture(5)" src="./img/camera-4-100.gif">
+
+                </ion-list>
+                <button class="button button-stable button-block glow" style="border-radius: 7px;" type="submit"> <img align="left" src="./img/ico/service-anfragen.png" width="20" style=" margin-top:9pt; " /> {{ 'SERVICEBUTTON' | translate }}</button>
+                <br>
+            </fieldset>
+        </form>
+    </ion-content>
+</ion-view>

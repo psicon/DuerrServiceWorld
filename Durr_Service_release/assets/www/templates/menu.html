@@ -1,0 +1,76 @@
+<ion-side-menus enable-menu-with-back-views="true">
+
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-thin-left"></i></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">{{ 'MENU' | translate }}</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+       <a class="item " menu-close nav-clear ng-click="scanBarcode()">
+          <img src="./img/ico/code-scannen.png" width="20"/>
+          &nbsp;&nbsp;{{ 'SCANBUTTONMENU' | translate }}
+  		</a>
+
+         <form name="formean" ng-controller="AppCtrl"  ng-submit="searchproduktedirect()" novalidate  class="searchform">
+         <label class="item-input-wrapper "  style="background:white; margin-top:0pt; height:37pt; border-color: #00bbef; border-radius: 4px; border: none;	border-width: 1px; border-height:-10px;"style="border-color: #00bbef; border-radius: 4px; border: solid;	border-width: 1px; border-height:-10px;" ng-controller="AppCtrl">
+            <img src="./img/ico/IconFind.png" style="margin-left: 6pt;"width="20"/>
+
+            <input name="suche" id="suche" class="input2" style="width: 80%; height:40px; font-size: 14px; padding-left:11pt;border:none; " data-ng-model="suche.nach"  name="eanEAN" type="search"   placeholder=" &nbsp;&nbsp; {{ 'SEARCHBUTTONMENU' | translate }}"  required ng-minlength=3 ></input>
+
+         </label>
+            </form>
+         <a class="item ">
+
+         </a>
+
+       <a class="item " menu-close nav-clear   href="#/app/browse">
+          <img src="./img/ico/home.png" width="20"/>
+          &nbsp;&nbsp;{{ 'HOME' | translate }}
+  		</a>
+
+       <a class="item " menu-close  href="#/app/geraete" >
+          <img src="./img/ico/verlauf.png" width="20"/>
+          &nbsp;&nbsp;{{ 'HISTORYBUTTONMENU' | translate }}
+  		</a>
+
+
+         <a class="item " menu-close    href="#/app/reggeraete" >
+            <img src="./img/ico/geraeteliste.png" width="20"/>
+            &nbsp;&nbsp;{{ 'DEVICELISTBUTTONMENU' | translate }}
+         </a>
+
+
+
+        <a class="item" menu-close   href="#/app/downloads">
+           <img src="./img/ico/IconDownload.png" width="20"/>
+           &nbsp;&nbsp;{{ 'DOWNLOADS' | translate }}
+  		</a>
+
+         <a class="item ">
+
+         </a>
+         <a class="item " menu-close    href="#/app/einstellungen">
+            <img src="./img/ico/IconIDeviceSettings.png" width="20"/>
+            &nbsp;&nbsp;{{ 'SETTINGSBUTTONMENU' | translate }}
+         </a>
+
+            <a class="item ">
+
+               <a class="item " ng-show="isAndroid" menu-close nav-clear ng-click="closeapp()">
+                  <img src="./img/ico/IconClose.png" width="20"/>
+                  &nbsp;&nbsp;{{ 'CLOSEAPPMENU' | translate }}
+               </a>
+
+
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

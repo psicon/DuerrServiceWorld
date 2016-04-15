@@ -1,0 +1,28 @@
+<ion-view title='Dürr Service' class="home">
+   <ion-nav-buttons side="left">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+
+   </ion-nav-buttons>
+   <ion-nav-buttons side="right">
+      <img src="./img/logo.png"  class="headerimg">
+   </ion-nav-buttons>
+   <ion-content class="has-header">
+
+
+      <ion-list class="list" ng-repeat="article in articles" >
+         <a class="item item-avatar item-icon-right" ng-click="opendetails('{{article[0].articleno}}', '{{article[0].salesgroup}}','{{article[0].Praxis}}', '{{article[0].serial}}')">
+            <img src="{{article[0].Bild}}">
+            <i class="icon ion-ios7-arrow-right"></i>
+            <h2 style="white-space:pre;">{{article[0].Bezeichnung}}</h2>
+            <p style="white-space:pre;">REF: {{article[0].articleno}}</p>
+            <p style="white-space:pre;">SN: {{article[0].serial}}</p>
+            <p style="white-space:pre;">{{article[0].date}}</p>
+            <p style="white-space:pre; color: #00bbef; font-weight: bold;">{{ 'SURGERY' | translate }}: {{article[0].Praxis}}</p>
+          </a>
+      </ion-list>
+
+
+   </ion-content>
+
+
+</ion-view>
